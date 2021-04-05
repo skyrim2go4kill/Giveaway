@@ -34,7 +34,7 @@
 Copyright 2021 © All RIghts are Reserved 
 # License
 **Creative Commons Zero v1.0 Universal**
-[View the license here](https://github.com/ZeroDiscord/Welcomer/blob/main/LICENSE)
+[View the license here](https://github.com/ZeroDiscord/Giveaway/blob/main/LICENSE)
 
 **NOTE**
 **`` Please note that repl.it is not really a stable host as well as glitch, keeping that in mind I would like to tell you that you may consider hosting somewhere else or you can Direct Message 0_0#6666 on Discord and I will provide you a host for boosting our server! ``**
