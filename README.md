@@ -31,7 +31,8 @@
 - 🔗 [Youtube Channel](https://www.youtube.com/c/ZeroSync)
 - [Support Server Link](https://discord.gg/HEpHMPsUvC)
 # Copyright 
-Copyright 2021 © All RIghts are Reserved | # License
+Copyright 2021 © All RIghts are Reserved 
+# License
 **Creative Commons Zero v1.0 Universal**
 [View the license here](https://github.com/ZeroDiscord/Welcomer/blob/main/LICENSE)
 
