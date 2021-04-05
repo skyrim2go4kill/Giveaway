@@ -1,7 +1,7 @@
 # GiveawayBot™
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-** A Discord Giveaway Bot Written In Discord.js to fulfil all your needs! ranging from server requirements to a responsive create giveaways command **
+**A Discord Giveaway Bot Written In Discord.js to fulfil all your needs! ranging from server requirements to a responsive create giveaways command**
 
 ## **This GiveawayBot was created by 0_0#6666**
 
@@ -35,7 +35,7 @@ Copyright 2021 © All RIghts are Reserved | # License
 **Creative Commons Zero v1.0 Universal**
 [View the license here](https://github.com/ZeroDiscord/Welcomer/blob/main/LICENSE)
 
-**NOTE
-`` Please note that repl.it is not really a stable host as well as glitch, keeping that in mind I would like to tell you that you may consider hosting somewhere else or you can Direct Message 0_0#6666 on Discord and I will provide you a host for boosting our server! ``**
+**NOTE**
+**`` Please note that repl.it is not really a stable host as well as glitch, keeping that in mind I would like to tell you that you may consider hosting somewhere else or you can Direct Message 0_0#6666 on Discord and I will provide you a host for boosting our server! ``**
 # Host On Repl.it
 [![Use on Repl.it](https://repl.it/badge/github/ZeroDiscord/EconomyBot)](https://repl.it/github/ZeroDiscord/GiveawayBot)
