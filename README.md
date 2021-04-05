@@ -1,2 +1,41 @@
-# Giveaway
-Easy To Use Giveaway Bot Written In Discord.js v12 with server requirements
+# GiveawayBot™
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+
+** A Discord Giveaway Bot Written In Discord.js to fulfil all your needs! ranging from server requirements to a responsive create giveaways command **
+
+## **This GiveawayBot was created by 0_0#6666**
+
+[![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com)
+
+# Easy set up!
+
+## You can run the bot in just a few steps! Let me show you how:
+### Step 1: Obtain a Bot Token From [Here](https://discord.com/developers)
+### Step 2: Make sure to enable privilleged gateway intents! (Member Intents In The Portal)
+![alt text](https://zerosnaps.cf/2faykzzg.gif)
+### Step 3 : Replace the Token in [config.json](https://github.com/ZeroDiscord/Welcomer/blob/main/config.json)
+## And We Are Done! Now Simply host the Bot!
+
+# Features 
+- ### Interactive Giveaway Creation
+![Create](https://zerosnaps.cf/a5li4r6s.gif)
+- ### Direct Message User On Removing Reaction
+![Dm](https://zerosnaps.cf/3z1w6r8w.png)
+- ### Direct Message Winner On Winning
+![win](https://zerosnaps.cf/iccnfztl.png)
+- ### And Lots More!
+- Direct message when the server mentioned for joining is not joined
+- Direct message when the server mentioned for joining is joined 
+- Direct Message When User Reacts on an ended giveaway
+# Links
+- 🔗 [Youtube Channel](https://www.youtube.com/c/ZeroSync)
+- [Support Server Link](https://discord.gg/HEpHMPsUvC)
+# Copyright 
+Copyright 2021 © All RIghts are Reserved | # License
+**Creative Commons Zero v1.0 Universal**
+[View the license here](https://github.com/ZeroDiscord/Welcomer/blob/main/LICENSE)
+
+**NOTE
+`` Please note that repl.it is not really a stable host as well as glitch, keeping that in mind I would like to tell you that you may consider hosting somewhere else or you can Direct Message 0_0#6666 on Discord and I will provide you a host for boosting our server! ``**
+# Host On Repl.it
+[![Use on Repl.it](https://repl.it/badge/github/ZeroDiscord/EconomyBot)](https://repl.it/github/ZeroDiscord/GiveawayBot)
