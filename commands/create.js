@@ -1,8 +1,7 @@
 module.exports.run = async (client, message) => {
   const Discord = require("discord.js");
   const ms = require("ms");
-  const Database = require("@replit/database");
-  const db = new Database();
+  const prefix = client.config.prefix
   const currentGiveaways = client.giveawaysManager.giveaways.filter(
     g => g.guildID === message.guild.id && !g.ended
   ).length;
@@ -34,6 +33,7 @@ module.exports.run = async (client, message) => {
   });
 
   collector.on("collect", async collect => {
+    
     const response = collect.content;
     let chn =
       collect.mentions.channels.first() ||
@@ -59,6 +59,7 @@ module.exports.run = async (client, message) => {
       time: 30000
     });
     collector2.on("collect", async collect2 => {
+      
       let mss = ms(collect2.content);
       if (!mss) {
         return msg.edit(
@@ -82,6 +83,7 @@ module.exports.run = async (client, message) => {
         errors: ['time']
       });
       collector3.on("collect", async collect3 => {
+        
         const response3 = collect3.content.toLowerCase();
         if (parseInt(response3) < 1 || isNaN(parseInt(response3))) {
           return msg.edit(
@@ -104,6 +106,7 @@ module.exports.run = async (client, message) => {
           { max: 3, time: 30000 }
         );
         collector4.on("collect", async collect4 => {
+          
           const response4 = collect4.content.toLowerCase();
           prize = response4;
           collector4.stop(
@@ -119,6 +122,7 @@ module.exports.run = async (client, message) => {
           );
           collector5.on("collect", async collect5 => {
             const response5 = collect5.content;
+            if(response5 !== "none"){
               client.fetchInvite(response5).then(async invite => {
                 let client_is_in_server = client.guilds.cache.get(
                   invite.guild.id
@@ -142,13 +146,9 @@ module.exports.run = async (client, message) => {
                       }
                     }
                   });
-                }
-                let Here = await db.get(`server_${message.channel.id}`);
-                if (Here === invite.guild.id) {
-                } else {
-                  db.set(`server_${message.channel.id}`, invite.guild.id);
-                }
-              });
+                
+              }
+              
               collector5.stop(
                 msg.edit(
                   embed.setDescription(
@@ -158,7 +158,7 @@ module.exports.run = async (client, message) => {
                     )}** and there will be **${winnersCount}** winner(s)! and users would have to join ${response5}`
                   )
                 )
-              );
+              )
             client.giveawaysManager.start(channel, {
               time: parseInt(time),
               prize: prize,
@@ -182,8 +182,15 @@ module.exports.run = async (client, message) => {
                   hours: "hours",
                   days: "days"
                 }
-              }
+              },
+              extraData: { 
+                server: `${invite.guild.id}`
+            }
+            })
             });
+            } else {
+              return message.channel.send(`**Please use the command \`\`${prefix}start\`\` instead to make a giveaway without a server requirement**`)
+            }
           });
         });
       });
@@ -222,4 +229,4 @@ module.exports.run = async (client, message) => {
     } catch (e) {
       
     }
-};
+}
