@@ -40,3 +40,5 @@ Copyright 2021 © All RIghts are Reserved
 **`` Please note that repl.it is not really a stable host as well as glitch, keeping that in mind I would like to tell you that you may consider hosting somewhere else or you can Direct Message 0_0#6666 on Discord and I will provide you a host for boosting our server! ``**
 # Host On Repl.it
 [![Use on Repl.it](https://repl.it/badge/github/ZeroDiscord/EconomyBot)](https://repl.it/github/ZeroDiscord/GiveawayBot)
+# Remix On Glitch
+[![Remix On Glitch](https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix-button.svg?1504724691606)](https://glitch.com/edit/#!/import/github/ZeroDiscord/Giveaway)
