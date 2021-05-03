@@ -18,34 +18,35 @@ module.exports.run = async (client, message) => {
     embed.setDescription(
       "In which channel would you like the giveaway to start in?\nPlease tag the channel or provide it's ID.\n **Must Reply within 30 seconds!**"
     )
-  );
+  )
   let xembed = new Discord.MessageEmbed()
-  .setTitle("Oops! Looks Like We Met A Timeout! 🕖")
+    .setTitle("Oops! Looks Like We Met A Timeout! 🕖")
     .setColor("#FF0000")
     .setDescription('💥 Snap our luck!\nYou took too much time to decide!\nUse ``create`` again to start a new giveaway!\nTry to respond within **30 seconds** this time!')
     .setFooter(client.user.username, client.user.displayAvatarURL())
-    .setTimestamp();
+    .setTimestamp()
 
-  const filter = m => m.author.id === message.author.id && !m.author.bot;
+  const filter = m => m.author.id === message.author.id && !m.author.bot
   const collector = await message.channel.createMessageCollector(filter, {
     max: 3,
     time: 30000
-  });
+  })
 
   collector.on("collect", async collect => {
-    
-    const response = collect.content;
+
+    const response = collect.content
     let chn =
       collect.mentions.channels.first() ||
-      message.guild.channels.cache.get(response);
+      message.guild.channels.cache.get(response)
+    await collect.delete()
     if (!chn) {
       return msg.edit(
         embed.setDescription(
           "Uh-Oh! Looks like you provided an Invalid channel!\n**Try Again?**\n Example: ``#giveaways``, ``677813783523098627``"
         )
-      );
+      )
     } else {
-      channel = chn;
+      channel = chn
       collector.stop(
         msg.edit(
           embed.setDescription(
@@ -59,8 +60,9 @@ module.exports.run = async (client, message) => {
       time: 30000
     });
     collector2.on("collect", async collect2 => {
-      
+
       let mss = ms(collect2.content);
+      await collect2.delete()
       if (!mss) {
         return msg.edit(
           embed.setDescription(
@@ -83,8 +85,10 @@ module.exports.run = async (client, message) => {
         errors: ['time']
       });
       collector3.on("collect", async collect3 => {
-        
-        const response3 = collect3.content.toLowerCase();
+
+
+        const response3 = collect3.content.toLowerCase()
+        await collect3.delete()
         if (parseInt(response3) < 1 || isNaN(parseInt(response3))) {
           return msg.edit(
             embed.setDescription(
@@ -106,9 +110,10 @@ module.exports.run = async (client, message) => {
           { max: 3, time: 30000 }
         );
         collector4.on("collect", async collect4 => {
-          
+
           const response4 = collect4.content.toLowerCase();
           prize = response4;
+          await collect4.delete()
           collector4.stop(
             msg.edit(
               embed.setDescription(
@@ -118,11 +123,12 @@ module.exports.run = async (client, message) => {
           );
           const collector5 = await message.channel.createMessageCollector(
             filter,
-            { max: 3, time: 30000 }
+            { max: 1, time: 30000 }
           );
           collector5.on("collect", async collect5 => {
             const response5 = collect5.content;
-            if(response5 !== "none"){
+            await collect5.delete()
+            if (response5 !== "none") {
               client.fetchInvite(response5).then(async invite => {
                 let client_is_in_server = client.guilds.cache.get(
                   invite.guild.id
@@ -138,7 +144,7 @@ module.exports.run = async (client, message) => {
                       title: "Server Check!",
                       url: "https://youtube.com/c/ZeroSync",
                       description:
-                        "Woah woah woah! I see a new server! are you sure I am in that? You need to invite me there to set that as a requirement! :flushed:",
+                        "Woah woah woah! I see a new server! are you sure I am in that? You need to invite me there to set that as a requirement! 😳",
                       timestamp: new Date(),
                       footer: {
                         icon_url: client.user.avatarURL,
@@ -146,87 +152,88 @@ module.exports.run = async (client, message) => {
                       }
                     }
                   });
-                
-              }
-              
-              collector5.stop(
-                msg.edit(
-                  embed.setDescription(
-                    `Alright! Giveaway has been started in ${channel} for **${prize}** which will last for **${ms(
-                      time,
-                      { long: true }
-                    )}** and there will be **${winnersCount}** winner(s)! and users would have to join ${response5}`
+
+                }
+
+                collector5.stop(
+                  msg.edit(
+                    embed.setDescription(
+                      `Alright! Giveaway has been started in ${channel} for **${prize}** which will last for **${ms(
+                        time,
+                        { long: true }
+                      )}** and there will be **${winnersCount}** winner(s)! and users would have to join ${response5}`
+                    )
                   )
                 )
-              )
-            client.giveawaysManager.start(channel, {
-              time: parseInt(time),
-              prize: prize,
-              hostedBy: client.config.hostedBy ? message.author : null,
-              winnerCount: parseInt(winnersCount),
-              messages: {
-                giveaway: "**Giveaway!**",
-                giveawayEnded: "**GIVEAWAY ENDED**",
-                timeRemaining: `**Time Remaining : {duration}**`,
-                inviteToParticipate: `**React with 🎉 to participate!**`,
-                winMessage: "Congratulations, {winners}! You won **{prize}**!",
-                embedFooter: "Giveaways",
-                hostedBy: "**Hosted By: {user}**",
-                noWinner:
-                  "**Uh Oh! Looks like we got no reactions on this giveaway :<**.",
-                winners: "Lucky Winner(s) In This Giveaway",
-                endedAt: "Winners rolled at",
-                units: {
-                  seconds: "seconds",
-                  minutes: "minutes",
-                  hours: "hours",
-                  days: "days"
-                }
-              },
-              extraData: { 
-                server: `${invite.guild.id}`
-            }
-            })
-            });
+                client.giveawaysManager.start(channel, {
+                  time: parseInt(time),
+                  prize: prize,
+                  hostedBy: client.config.hostedBy ? message.author : null,
+                  winnerCount: parseInt(winnersCount),
+                  messages: {
+                    giveaway: "**Giveaway!**",
+                    giveawayEnded: "**GIVEAWAY ENDED**",
+                    timeRemaining: `**Time Remaining : {duration}**`,
+                    inviteToParticipate: `**React with 🎉 to participate!**`,
+                    winMessage: "Congratulations, {winners}! You won **{prize}**!",
+                    embedFooter: "Giveaways",
+                    hostedBy: "**Hosted By: {user}**",
+                    noWinner:
+                      "**Uh Oh! Looks like we got no reactions on this giveaway :<**.",
+                    winners: "Lucky Winner(s) In This Giveaway",
+                    endedAt: "Winners rolled at",
+                    units: {
+                      seconds: "seconds",
+                      minutes: "minutes",
+                      hours: "hours",
+                      days: "days"
+                    }
+                  },
+                  extraData: {
+                    server: `${invite.guild.id}`
+                  }
+                })
+              });
             } else {
-              return message.channel.send(`**Please use the command \`\`${prefix}start\`\` instead to make a giveaway without a server requirement**`)
+              return
+              message.channel.send(`**Please use the command \`\`${prefix}start\`\` instead to make a giveaway without a server requirement**`)
             }
           });
         });
       });
     });
   });
-   collector.on('end', (collected, reason) => {
-                        if (reason == 'time'){
-                            message.channel.send(xembed)
-                        }
-    })
-    try {
+  collector.on('end', (collected, reason) => {
+    if (reason == 'time') {
+      message.channel.send(xembed)
+    }
+  })
+  try {
     collector2.on('end', (collected, reason) => {
-                        if (reason == 'time'){
-                         
-                            message.channel.send(xembed)
-                        }
+      if (reason == 'time') {
+
+        message.channel.send(xembed)
+      }
     });
     collector3.on('end', (collected, reason) => {
-                        if (reason == 'time'){
-                            message.channel.send(xembed)
-                       
-    }
+      if (reason == 'time') {
+        message.channel.send(xembed)
+
+      }
     })
     collector4.on('end', (collected, reason) => {
-                        if (reason == 'time'){
-                          
-                            message.channel.send(xembed)
-    }
+      if (reason == 'time') {
+
+        message.channel.send(xembed)
+      }
     })
     collector5.on('end', (collected, reason) => {
-                        if (reason == 'time'){
-                        
-                            message.channel.send(xembed)
-    }
+      if (reason == 'time') {
+
+        message.channel.send(xembed)
+      }
     })
-    } catch (e) {
-      
-    }
+  } catch (e) {
+
+  }
 }
