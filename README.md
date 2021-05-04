@@ -23,7 +23,7 @@
 ![Dm](https://zerosnaps.cf/3z1w6r8w.png)
 - ### Direct Message Winner On Winning
 ![win](https://zerosnaps.cf/iccnfztl.png)
-### Featured ✨ Bonus Enteries 
+### Featured ✨ Bonus Entries 
 ![Bonus](https://zerosnaps.cf/8eblx4sc.gif)
 - ### And Lots More!
 - Direct message when the server mentioned for joining is not joined
