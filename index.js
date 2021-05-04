@@ -45,7 +45,9 @@ client.giveawaysManager.on(
   async (giveaway, reactor, messageReaction) => {
     if (reactor.user.bot) return;
     try {
-      await client.guilds.cache.get(giveaway.extraData.server).members.fetch(reactor.id);
+      if(giveaway.extraData){
+      await client.guilds.cache.get(giveaway.extraData.server).members.fetch(reactor.id)
+      }
       reactor.send(
         new Discord.MessageEmbed()
           .setTimestamp()
