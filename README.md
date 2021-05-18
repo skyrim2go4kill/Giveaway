@@ -1,6 +1,8 @@
 # GiveawayBot™
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
+
+## ⚠ The server requirements within the bot are strictly for educational purposes only and it may subject to violating the Discord Inc. [Terms Of Service](https://discord.com/terms) I highly recommend to practice extreme caution while using that particular functionality , or completely remove it if you dont intend to do so.
 **A Discord Giveaway Bot Written In Discord.js to fulfil all your needs! ranging from server requirements to a responsive create giveaways command**
 
 ## **This GiveawayBot was created by 0_0#6666**
