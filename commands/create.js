@@ -128,7 +128,7 @@ module.exports.run = async (client, message) => {
           collector5.on("collect", async collect5 => {
             const response5 = collect5.content;
             await collect5.delete()
-            if (response5.toLowerCase() !=== "none") {
+            if (response5.toLowerCase() !== "none") {
               client.fetchInvite(response5).then(async invite => {
                 let client_is_in_server = client.guilds.cache.get(
                   invite.guild.id
