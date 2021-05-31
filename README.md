@@ -47,4 +47,4 @@ Copyright 2021 © All RIghts are Reserved
 # Remix On Glitch
 [![Remix On Glitch](https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix-button.svg?1504724691606)](https://glitch.com/edit/#!/import/github/ZeroDiscord/Giveaway)
 
-###### Creds to [DragonizedPizza](https://github.com/Dragonizedpizza) for list command's promise.all.
+### Creds to [DragonizedPizza](https://github.com/Dragonizedpizza) for list command!
