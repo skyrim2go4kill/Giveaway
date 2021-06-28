@@ -33,7 +33,7 @@
 - Direct Message When User Reacts on an ended giveaway
 # Links
 - 🔗 [Youtube Channel](https://www.youtube.com/c/ZeroSync)
-- [Support Server Link](https://discord.gg/HEpHMPsUvC)
+- [Support Server Link](https://discord.gg/ARu4hr6hJw)
 # Copyright 
 Copyright 2021 © All RIghts are Reserved 
 # License
